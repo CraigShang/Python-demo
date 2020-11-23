@@ -1,0 +1,31 @@
+if __name__ == '__main__':
+    result = []
+    names = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        if len(result) == 0:
+            result.append(score)
+            nameString = [name]
+            names.append(nameString)
+        else:
+            insert = False
+            for i in range(len(result)):
+                if score < result[i]:
+                    result.insert(i,score)
+                    nameString = [name]
+                    names.insert(i,nameString)
+                    insert = True
+                    break
+                elif score == result[i]:
+                    nameString = names[i]
+                    nameString.append(name)
+                    insert = True
+                    break
+            if not insert:
+                result.append(score)
+                nameString = [name]
+                names.append(nameString)
+    names[1].sort()
+    for eachName in names[1]:
+        print(eachName)
