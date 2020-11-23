@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    highest = -101
+    runnerUp = -101
+    for score in arr:
+        current = int(score)
+        if score > highest:
+            runnerUp = highest
+            highest = score
+        elif score < highest and score > runnerUp:
+            runnerUp = score
+    print(runnerUp)
