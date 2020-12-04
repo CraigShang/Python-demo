@@ -1,0 +1,19 @@
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    scorelist = student_marks[query_name]
+    totalScore = float(0)
+    count = 0
+    if scorelist is not None:
+        for eachscore in scorelist:
+            totalScore += float(eachscore)
+            count += 1
+    if count > 0:
+        print(format(totalScore/count,'.2f'))
+    else:
+        print(0)
