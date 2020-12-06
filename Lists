@@ -1,0 +1,23 @@
+if __name__ == '__main__':
+    N = int(input())
+    currnetList = []
+    loop = 0
+    while loop < N:
+        commandLine = input()
+        command = commandLine.split(' ')
+        if len(command) > 0:
+            if command[0] == 'insert' and len(command) == 3:
+                currnetList.insert(int(command[1]),int(command[2]))
+            elif command[0] == 'print':
+                print(currnetList)
+            elif command[0] == 'remove' and len(command) == 2:
+                currnetList.remove(int(command[1]))
+            elif command[0] == 'append' and len(command) == 2:
+                currnetList.append(int(command[1]))
+            elif command[0] == 'sort':
+                currnetList.sort()
+            elif command[0] == 'pop':
+                currnetList.pop()
+            elif command[0] == 'reverse':
+                currnetList.reverse()
+        loop+=1
