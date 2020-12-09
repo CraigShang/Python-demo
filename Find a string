@@ -3,7 +3,7 @@ def count_substring(string, sub_string):
         return 0
     loop = 0
     count = 0
-    while loop + len(sub_string) <= len(string):       
+    while loop + len(sub_string) - 1 < len(string):      
         if string[loop:loop+len(sub_string)] == sub_string:
             count+=1
         loop+=1
