@@ -1,0 +1,22 @@
+size = input().split()
+row = int(size[0])
+col = int(size[1])
+result = []
+for i in range(row):
+    if i < (row - 1)/2:
+        dash=[]
+        dot=[".|."]            
+        for j in range(int((col-3-i*6)/2)):
+            dash.append("-")
+        for j in range(i):
+            dot.append(".|..|.")
+        result.append("".join(dash)+"".join(dot)+"".join(dash))
+    elif i == (row - 1)/2:
+        dash=[]
+        for j in range(int((col-7)/2)):
+            dash.append("-")
+        result.append("".join(dash)+"WELCOME"+"".join(dash))
+    else:
+        result.append(result[row-i-1])
+for i in range(len(result)):
+    print(result[i])
